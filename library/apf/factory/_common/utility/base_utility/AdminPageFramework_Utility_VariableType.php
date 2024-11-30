@@ -9,10 +9,10 @@
 abstract class AdminPageFramework_Utility_VariableType extends AdminPageFramework_Utility_Deprecated {
     public static function isResourcePath($sPathOrURL)
     {
-        if (defined('PHP_MAXPATHLEN') && strlen($sPathOrURL) > PHP_MAXPATHLEN) {
+        if (defined('PHP_MAXPATHLEN') && strlen($sPathOrURL ?? '') > PHP_MAXPATHLEN) {
             return ( boolean ) filter_var($sPathOrURL, FILTER_VALIDATE_URL);
         }
-        if (file_exists($sPathOrURL)) {
+        if (file_exists($sPathOrURL ?? '')) {
             return true;
         }
         return ( boolean ) filter_var($sPathOrURL, FILTER_VALIDATE_URL);

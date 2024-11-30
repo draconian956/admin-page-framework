@@ -33,7 +33,7 @@ class AdminPageFramework_WPUtility_Hook extends AdminPageFramework_WPUtility_Pag
                 continue;
             }
             $aArgs[ 1 ] = $sActionHook;
-            call_user_func_array(array( get_class(), 'addAndDoAction' ), $aArgs);
+            call_user_func_array(array( __CLASS__, 'addAndDoAction' ), $aArgs);
         }
     }
     public static function addAndDoAction()
@@ -63,7 +63,7 @@ class AdminPageFramework_WPUtility_Hook extends AdminPageFramework_WPUtility_Pag
             }
             $_aArgs[ 1 ] = $_sFilter;
             $_aArgs[ 2 ] = $_vInput;
-            $_vInput = call_user_func_array(array( get_class(), 'addAndApplyFilter' ), $_aArgs);
+            $_vInput = call_user_func_array(array( __CLASS__, 'addAndApplyFilter' ), $_aArgs);
         }
         return $_vInput;
     }

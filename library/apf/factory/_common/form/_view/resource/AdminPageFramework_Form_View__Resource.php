@@ -142,7 +142,7 @@ class AdminPageFramework_Form_View__Resource extends AdminPageFramework_Framewor
     }
     private function ___getSRCFormatted(array $aEnqueueItem)
     {
-        $_sSRCRaw = wp_normalize_path($aEnqueueItem[ 'src' ]);
+        $_sSRCRaw = wp_normalize_path($aEnqueueItem[ 'src' ] ?? '');
         $_sSRC = $this->getResolvedSRC($_sSRCRaw);
         if (! $this->oForm->aArguments[ 'autoload_min_resource' ]) {
             return $_sSRC;

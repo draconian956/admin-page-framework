@@ -172,7 +172,7 @@ abstract class AdminPageFramework_Resource_Base extends AdminPageFramework_Frame
         if (! $_oCaller->isInThePage()) {
             return;
         }
-        $this->_printCommonStyles('admin-page-framework-style-common', get_class());
+        $this->_printCommonStyles('admin-page-framework-style-common', __CLASS__);
         $this->_printClassSpecificStyles($this->_sClassSelector_Style . '-' . $this->oProp->sStructureType);
     }
     public function _replyToAddScript()
@@ -181,7 +181,7 @@ abstract class AdminPageFramework_Resource_Base extends AdminPageFramework_Frame
         if (! $_oCaller->isInThePage()) {
             return;
         }
-        $this->_printCommonScripts('admin-page-framework-script-common', get_class());
+        $this->_printCommonScripts('admin-page-framework-script-common', __CLASS__);
         $this->_printClassSpecificScripts($this->_sClassSelector_Script . '-' . $this->oProp->sStructureType);
     }
     protected function _enqueueSRC($aEnqueueItem)
